@@ -13,6 +13,11 @@ app.get('/', (req, res) => {
 })
 
 
+app.get('*', (req, res) => {
+    res.render('errorNotFound')
+})
+
+
 app.listen(port, () => {
     console.log(`Listening to port: ${port}`)
 })

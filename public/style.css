@@ -1,0 +1,96 @@
+:root{
+    --banner-color-theme: #f0ead2;
+}
+
+body, html{
+    padding: 0;
+    margin: 0;
+}
+
+.page-wrapper{
+    overflow-x: hidden;
+}
+
+#sign-up-btn{
+    padding: 8px 20px;
+    border-radius: 0.8rem;
+    border: none;
+    background-color: #463f3a;
+    color: white;
+}
+
+#navbar-banner{
+    background-color: var(--banner-color-theme);
+
+}
+
+#header-nav{
+    font-size: x-large !important;
+    font-weight: bolder;
+}
+
+.title-nav li{
+    padding-right: 30px;
+}
+.item-nav li{
+    padding-left: 30px;
+}
+
+.burger{
+    font-size: 2em;
+    background: none;
+    border: none;
+    z-index: 100;
+}
+
+.mobile-nav{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    top: -100%;
+    left: 0;
+    justify-content: center;
+    list-style-type: none;
+    text-align: center;
+    background-color: var(--banner-color-theme);
+    height: 70%;
+    z-index: 99;
+    transition: 0.5s;
+}
+
+.mobile-nav.visible{
+    top: 0;
+}
+
+.mob-item{
+    width: 100%;
+    color: black;
+}
+
+.mob-item li {
+    width: 100%;
+    padding: 15px 0;
+}
+
+.nav-link{
+    border-radius: 2rem;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    background-color: #bcb8b1 !important;
+
+}
+
+.mob-item div{
+    width: 50%;
+}
+
+#account-option{
+
+    border-bottom: black solid 1px;
+}
+

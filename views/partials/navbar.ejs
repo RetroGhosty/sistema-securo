@@ -1,6 +1,6 @@
 <header id="navbar-banner" class="user-select-none">
     <div class="mobile-nav">
-        <div class="mob-item pt-3 ">
+        <div class="mob-item pt-3">
             <span id="header-nav"><a href="<%=homepage.value%>"><%=homepage.title%></a></span>
             <ul class="d-flex pt-4 flex-column align-items-center list-unstyled">
                 <div id="account-option">
@@ -23,13 +23,11 @@
         </div>
 
     </div>
-    <ul class="list-unstyled d-flex flex-row justify-content-between align-items-center mx-3 mx-md-4 mb-0 p-2 p-md-3 ">
+    <ul class="desktop-nav list-unstyled d-flex flex-row justify-content-between align-items-center mx-3 mx-md-4 mb-0 p-2 p-lg-4">
         <div class="title-nav d-flex flex-row justify-content-between align-items-center">
             <li><span id="header-nav"><a href="<%=homepage.value%>"><%=homepage.title%></a></span></li>
         </div>
-        <div class="title-nav d-flex flex-row align-items-center d-none d-md-flex">
-
-
+        <div class="title-nav d-flex flex-row align-items-center d-none d-lg-flex">
             <div class="d-flex flex-row justify-content-between align-items-center">
                 <%for (let data in publicLinks){%>
                     <li class="nav-link">
@@ -38,7 +36,6 @@
                 <%}%>
             </div>
             <div class="d-flex fle-row justify-content-between align-items-center">
-                
                 <%for (let data in account){%>
                     <%if (data === 'sign-up'){ %>
                         <li class="nav-link">
@@ -51,10 +48,9 @@
                         </li>
                     <%}%>
                 <%}%>
-
             </div>
         </div>
-        <button class="burger px-4 d-block d-md-none">
+        <button class="burger px-4 d-block d-lg-none">
             <i class="fa-solid fa-bars"></i>
         </button>
     </ul>

@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     res.render('home', {...pageData})
 })
 
+app.get('/about', (req, res) => {
+    res.render('about', {...pageData})
+})
+
 app.get('/test', (req, res) => {
     const {convert} = req.query
     const pram = async () => {

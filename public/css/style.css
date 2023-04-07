@@ -2,6 +2,7 @@
     --banner-color-theme: #f0ead2;
 }
 
+
 body, html{
     padding: 0;
     margin: 0;
@@ -25,7 +26,6 @@ body, html{
 
 #navbar-banner{
     background-color: var(--banner-color-theme);
-
 }
 
 #header-nav{

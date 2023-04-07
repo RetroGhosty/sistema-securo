@@ -1,0 +1,36 @@
+{
+    "homepage" : {
+        "title" : "Montalban Resort",
+        "value" : "/"
+    },
+
+    "account" : {
+        "sign-up" : {
+            "title" : "Sign-up",
+            "value" : "signup"
+        },
+        "sign-in" : {
+            "title" : "Sign-in",
+            "value" : "signin"
+        }
+    },
+
+    "publicLinks" : {
+        "about" : {
+            "title" : "About",
+            "value" : "about"
+        },
+        "booking" : {
+            "title" : "Booking",
+            "value" : "booking"
+        },
+        "bookingPrices" : {
+            "title" : "Booking Prices",
+            "value" : "prices"
+        },
+        "test" : {
+            "title" : "test",
+            "value" : "test"
+        }
+    }
+}

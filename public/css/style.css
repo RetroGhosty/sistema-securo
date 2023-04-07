@@ -19,6 +19,10 @@ body, html{
     color: white;
 }
 
+#sign-up-btn a{
+    color: white;
+}
+
 #navbar-banner{
     background-color: var(--banner-color-theme);
 
@@ -29,12 +33,18 @@ body, html{
     font-weight: bolder;
 }
 
+#header-nav a{
+    text-decoration: none;
+    color: black;
+}
+
 .title-nav li{
-    padding-right: 30px;
+    margin-right: 30px;
 }
 .item-nav li{
-    padding-left: 30px;
+    margin-left: 30px;
 }
+
 
 .burger{
     font-size: 2em;
@@ -55,7 +65,7 @@ body, html{
     list-style-type: none;
     text-align: center;
     background-color: var(--banner-color-theme);
-    height: 70%;
+    height: 80vh;
     z-index: 99;
     transition: 0.5s;
 }
@@ -74,13 +84,23 @@ body, html{
     padding: 15px 0;
 }
 
-.nav-link{
+.nav-link-mobile{
     border-radius: 2rem;
     margin: 10px 0;
     transition: 0.3s;
 }
 
-.nav-link:hover{
+
+.nav-link-mobile a{
+    text-decoration: none;
+    color: black;
+}
+.nav-link a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link-mobile:hover{
     background-color: #bcb8b1 !important;
 
 }

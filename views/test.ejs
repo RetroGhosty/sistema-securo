@@ -6,16 +6,15 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <form action="/test" method="GET">
-                            <input name="convert" id="convert" placeholder="password1245" />
-                            <button>Send my greetings</button>
-                    </form>
+                    <h1>Registered users</h1>
+                    <ul class="list-unstyled">
+                        <%for (let u in fakedataBase){%>
+                         <li><span class="mx-2"><a href="/test/users/<%=fakedataBase[u].uid%>">profile</a></span><%=fakedataBase[u].username%>:<%=fakedataBase[u].password%></li>
+                        <%}%>
+                    </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col"><b>Result:</b></div>
-                <div class="col"><span><%= hashedData %></span></div>
-            </div>
+            <a href="/test/register"><button>Register</button></a>
         </div>
     </section>
     <section></section>

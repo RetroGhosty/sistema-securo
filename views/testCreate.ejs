@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs')%>
+
+<main id="mainContent" class="p-4 p-md-5">
+    <section id="content">
+        <div class="container-fluid">
+            <div class="row">
+                <h1>Register</h1>
+                <div class="col">
+                    <form action="/test/register" method="POST" id="text2Hash">
+                            <label for="user"></label>
+                            <input name="user" id="user" placeholder="username" />
+                            <label for="pass"></label>
+                            <input name="pass" id="pass" type="password" placeholder="password" />
+                            <button>Register</button>
+                    </form>
+                </div>
+            </div>
+            <a href="/test"><button>Return</button></a>
+        </div>
+    </section>
+    <section></section>
+    <section></section>
+</main>
+
+<%- include('partials/footer.ejs') %>

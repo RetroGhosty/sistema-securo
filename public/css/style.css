@@ -1,10 +1,13 @@
 :root{
     --banner-color-theme: #f0ead2;
+    ---banner-color-sticky: #ffc971;
 }
+
 
 body, html{
     padding: 0;
     margin: 0;
+    
 }
 
 .page-wrapper{
@@ -24,8 +27,11 @@ body, html{
 }
 
 #navbar-banner{
+    position: fixed;
+    width: 100%;
+    z-index: 101;
     background-color: var(--banner-color-theme);
-
+    transition: 0.3s;
 }
 
 #header-nav{
@@ -74,8 +80,10 @@ body, html{
     top: 0;
 }
 
+
+
 .mob-item{
-    width: 100%;
+    width: 70%;
     color: black;
 }
 
@@ -106,11 +114,51 @@ body, html{
 }
 
 .mob-item div{
-    width: 50%;
+    width: 100%;
 }
 
 #account-option{
-
     border-bottom: black solid 1px;
 }
 
+.landHeader{
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/df/Town_and_Country_fh000023.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    color: white;
+}
+
+#mainContent{
+    padding-top: 10vh !important;
+}
+
+
+#main-content .row{
+    min-height: 100vh;
+}
+
+#content{
+    padding-top: 8vh;
+}
+
+
+.landFilter{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.534);
+}
+
+.sticky{
+    background-color: var(---banner-color-sticky) !important;
+}
+
+@media (max-width: 768px){
+    .landHeader{
+        height: 80vh;
+    }
+}

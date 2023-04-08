@@ -1,104 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montalban Resort Booking</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs')%>
 
-</head>
-<body>
-    <div class="page-wrapper">
-        <div class="container-fluid m-0 p-0">
-            <header id="navbar-banner" class="m-0 p-0 user-select-none">
-                <div class="mobile-nav">
-                    <div class="mob-item pt-3 ">
-                        <span id="header-nav"><a href="<%=homepage.value%>"><%=homepage.title%></a></span>
-                        <ul class="d-flex pt-4 flex-column align-items-center list-unstyled">
-                            <div id="account-option">
-                                <%for (let data in account){%>
-                                    <li class="nav-link-mobile">
-                                        <a href="<%=account[data].value%>"><%=account[data].title%></a>
-                                    </li>
-                                <%}%>
-
-                            </div>
-
-                            <div>
-                                <%for (let data in publicLinks){%>
-                                    <li class="nav-link-mobile">
-                                        <a href="<%=publicLinks[data].value%>"><%=publicLinks[data].title%></a>
-                                    </li>
-                                <%}%>
-                            </div>
-                        </ul>
-                    </div>
-
+<main id="mainContent" class="p-4 p-md-5">
+    <section>
+        <div class="container">
+            <div class="row d-flex flex-column align-items-center justify-content-center flex-md-row">
+                <div class="col text-center">
+                    <b><h1>Error 404: Page not found</h1></b>
                 </div>
-                <ul class="list-unstyled d-flex flex-row justify-content-between align-items-center mx-3 mx-md-4 mb-3 p-2 p-md-3">
-                    <div class="title-nav d-flex flex-row justify-content-between align-items-center">
-                        <li><span id="header-nav"><a href="<%=homepage.value%>"><%=homepage.title%></a></span></li>
-                    </div>
-
-                    <div class="title-nav d-flex flex-row align-items-center d-none d-md-flex">
-
-
-                        <div class="d-flex flex-row justify-content-between align-items-center">
-                            <%for (let data in publicLinks){%>
-                                <li class="nav-link">
-                                    <a href="<%=publicLinks[data].value%>"><%=publicLinks[data].title%></a>
-                                </li>
-                            <%}%>
-                        </div>
-                        <div class="d-flex fle-row justify-content-between align-items-center">
-                            
-                            <%for (let data in account){%>
-                                <%if (data === 'sign-up'){ %>
-                                    <li class="nav-link">
-                                        <button id="sign-up-btn"><a href="<%=account[data].value%>"><%=account[data].title%></a></button>
-   
-                                    </li>
-                                <%} else{ %>
-                                    <li class="nav-link">
-                                        <a href="<%=account[data].value%>"><%=account[data].title%></a>
-                                    </li>
-                                <%}%>
-                            <%}%>
-
-                        </div>
-                    </div>
-                    <button class="burger px-4 d-block d-md-none">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </ul>
-            </header>
-            
-            <main id="mainContent" class="p-4 p-md-5">
-                <section id="landPage">
-                    <div class="container">
-                        <div class="row d-flex flex-column align-items-center justify-content-center flex-md-row">
-                            <div class="col text-center">
-                                <b><h1>Error 404: Page not found</h1></b>
-                            </div>
-                            <div class="col">
-                                <img class="img-fluid" src="https://img.freepik.com/free-vector/illustration-characters-fixing-cogwheel_53876-40796.jpg?w=740&t=st=1680813150~exp=1680813750~hmac=3da0eed3cce138888d4d68e3795d28b6c436b0c5920f4f372c5c9777d61511ef" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    
-                </section>
-                <section></section>
-                <section></section>
-            </main>
-            <footer></footer>
+                <div class="col">
+                    <img class="img-fluid" src="https://img.freepik.com/free-vector/illustration-characters-fixing-cogwheel_53876-40796.jpg?w=740&t=st=1680813150~exp=1680813750~hmac=3da0eed3cce138888d4d68e3795d28b6c436b0c5920f4f372c5c9777d61511ef" alt="">
+                </div>
+            </div>
         </div>
-    </div>
+        
+    </section>
+    <section></section>
+    <section></section>
+</main>
 
-    <script src="/javascript/bootstrap.min.js"></script>
-    <script src="/javascript/bootstrap.min.js"></script>
-    <script src="/javascript/navbarAdjust.js"></script>
-    <script src="https://kit.fontawesome.com/2c2eacae4b.js" crossorigin="anonymous"></script>
-</body>
-</html>
+<%- include('partials/footer.ejs') %>

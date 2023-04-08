@@ -4,10 +4,10 @@ const saltRounds = 10;
 module.exports.hashPassword = async (plainText) => {
     return new Promise((resolve, reject) => {
         bcrypt.hash(plainText, saltRounds, (err, hash) => {
-            if(err){
-                reject('Something went wrong!')
-            }else{
+            try{
                 resolve(hash)
+            } catch(err){
+                reject('Something went wrong!')
             }
         })
     })
@@ -18,7 +18,7 @@ module.exports.comParePassword = async (plainText, hashed) => {
         bcrypt.compare(plainText, hashed, (err, hash) => {
             try{
                 resolve(hash)
-            } catch{
+            } catch(err){
                 reject('Something went wrong!')
             }
         })

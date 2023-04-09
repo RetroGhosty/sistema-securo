@@ -1,4 +1,4 @@
-# <h1>Resert reservation system</h1>
+# <h1>Resort reservation system</h1>
 <h3>Downloading dependencies</h3>
 
 To install dependencies in terminal(Mac) or GIT Bash (Windows)<br>

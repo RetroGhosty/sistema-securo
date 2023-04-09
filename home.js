@@ -4,8 +4,29 @@ const ShortUniqueId = require('short-unique-id');
 const app = express()
 const port = 3000
 
+//Connect to mongoDB
+const mongoose = require('mongoose');
+const {Schema} = mongoose
+mongoose.connect('mongodb://127.0.0.1:27017/montalban-resort')
+.then(() => {
+  console.log('Successfully connected')
+})
+.catch((err) => {
+  console.log('Error', err)
+})
+
+const pageSchema = new Schema({
+    pageType: String,
+    title: String,
+    value: String
+})
+
+const Page = mongoose.model('Page', pageSchema)
+
+
 const accountAuth = require('./accountAuth.js')
-const pageData = require('./availablePages.json')
+let pageData = null
+
 const uid = new ShortUniqueId({ length: 10 });
 
 app.use(express.static('public'))
@@ -16,6 +37,7 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views'))
 
 
+
 const fakedataBase = [
     {
         uid: uid(),
@@ -24,38 +46,35 @@ const fakedataBase = [
     },
 ]
 
-app.get('/', (req, res) => {
-    res.render('home', {...pageData})
+
+
+
+app.get('/', async (req, res) => {
+    let pageData = await Page.find().lean()
+    res.render('home', {pageData})
 })
 
-app.get('/about', (req, res) => {
-    res.render('about', {...pageData})
+app.get('/about', async (req, res) => {
+    let pageData = await Page.find().lean()
+    res.render('about', {pageData})
 })
 
-const pram = async (formBody) => {
-    const {user, pass} = formBody
-    const hashedData = await accountAuth.hashPassword(pass)
-    let temp = {
-        uid: uid(),
-        username: user,
-        password: hashedData,
-    }
-    fakedataBase.push(temp)
-}
-
-app.get('/test', (req, res) => {
-    res.render('test', {fakedataBase, ...pageData})
+app.get('/test', async (req, res) => {
+    let pageData = await Page.find().lean()
+    res.render('test', {fakedataBase, pageData})
 })
 
-app.get('/test/users/:id', (req, res) => {
+app.get('/test/users/:id', async (req, res) => {
+    let pageData = await Page.find().lean()
     const { id } = req.params
     const thisUser = fakedataBase.find(f => f.uid === id)
-    res.render('userdetails', {thisUser, ...pageData})
+    res.render('userdetails', {thisUser, pageData})
 })
 
 
-app.get('/test/register', (req, res) => {
-    res.render('testCreate', {...pageData})
+app.get('/test/register', async (req, res) => {
+    let pageData = await Page.find().lean()
+    res.render('testCreate', {pageData})
 })
 
 app.post('/test/register', async (req, res) => {
@@ -63,12 +82,13 @@ app.post('/test/register', async (req, res) => {
     res.redirect('/test')
 })
 
-app.get('*', (req, res) => {
-    res.render('errorNotFound', {...pageData}) 
+app.get('*', async (req, res) => {
+    let pageData = await Page.find().lean()
+    res.render('errorNotFound', {pageData}) 
     
 })
 
-
-app.listen(port, () => {
+app.listen(port, async () => {
     console.log(`Listening to port: ${port}`)
 })
+

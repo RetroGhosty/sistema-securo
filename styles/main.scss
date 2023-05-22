@@ -1,5 +1,6 @@
 $skinColor: #f0ead2;
 $colorSticky: #ffc971;
+$maxWidth: 1100px;
 
 body {
   padding: 0;
@@ -9,8 +10,79 @@ html {
   padding: 0;
   margin: 0;
 }
-.page-wrapper {
-  overflow-x: hidden;
+
+// Page margin
+.content-wrapper{
+
+  #reserve-option-wrapper{
+    position: relative;
+    .reserve-option-bar{
+      position: absolute;
+      top: -50px;
+      width: 100%;
+      max-width: $maxWidth;
+      position: absolute;
+      height: 90px;
+      label{
+        width: 40%;
+      }
+      input, select{
+        text-align: center;
+        width: 60%;
+      }
+
+      .row{
+        width: 100%;
+      }
+      #rs-input{
+        background-color: #ffc971;
+      }
+    }
+    #rs-result{
+      width: 100%;
+      background-color: #bcb8b1;
+    }
+  }
+
+  #navbar-banner{
+    .desktop-nav{
+      width: 100%;
+      max-width: $maxWidth;
+    }
+  }
+  main{
+    
+    .content{
+      width: 100%;
+
+    }
+    *{
+      max-width: $maxWidth;
+    }
+    padding-top: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 80vh;
+  }
+  #hero{
+    background-image: url('https://pixabay.com/get/gcb4d91ce8ec826c9c0a5803c105fd9909b91dafd38c73d6d8971a956cc66e2d888a37e79d9d4995bdaa9b5085ca0afe2_1280.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  #reserve-hero{
+    background-image: url('https://images2.dwell.com/photos/6063391372700811264/6136204840940625920/original.jpg?auto=format&q=35&w=960');
+    min-height: 60vh;
+  }
+
+}
+
+.row-content{
+  min-height: 10vh;
+  *{
+    max-width: $maxWidth;
+  }
 }
 #sign-up-btn {
   padding: 8px 20px;
@@ -70,20 +142,19 @@ html {
   transition: 0.5s;
 }
 
-
 .mobile-nav.visible {
   top: 0;
 }
 .mob-item {
-  width: 70%;
-  color: black;
+  *{
+    width: 100%;
+    color: black;
+  }
   li {
     width: 100%;
     padding: 15px 0;
   }
-  div {
-    width: 100%;
-  }
+
 }
 .nav-link-mobile {
   border-radius: 2rem;
@@ -106,38 +177,4 @@ html {
 #account-option {
   border-bottom: black solid 1px;
 }
-.landHeader {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/df/Town_and_Country_fh000023.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 90vh;
-  position: relative;
-  color: white;
-}
-#mainContent {
-  padding-top: 10vh;
-}
-#main-content {
-  .row {
-    min-height: 100vh;
-  }
-}
-#content {
-  padding-top: 8vh;
-}
-.landFilter {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: hsla(0, 0%, 0%, 0.534);
-}
-.sticky {
-  background-color: $colorSticky !important;
-}
-@media (max-width: 768px) {
-  .landHeader {
-    height: 80vh;
-  }
-}
+

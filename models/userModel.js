@@ -14,8 +14,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/securo-system')
 const userSchema = new Schema({
     username: {
         type: String,
-        required: true,
-        unique: true
+        required: [true, 'username can not be blank'],
+        unique: [true, 'username already in used']
     },
     password: {
         type: String,
@@ -28,7 +28,7 @@ const userSchema = new Schema({
     fingerprintId: {
         type: Number,
         required: true,
-        unique: true
+        unique: [true, 'fingerprint registered to other user']
     },
     isFlagged: {
         type: Boolean,
@@ -37,4 +37,3 @@ const userSchema = new Schema({
 })
 
 module.exports.Users = model('User', userSchema)
-
